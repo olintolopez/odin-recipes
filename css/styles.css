@@ -1,0 +1,369 @@
+/**************** 
+             IMPORT FONT STYLES
+****************/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap');
+
+
+/***************
+           DEFINE COLOR VARIABLES
+ ***************/
+ :root{
+  --blu:#3882F6;
+  --bla:#fff;
+  --os0:#000;
+  --os1:#1F2937;
+  --hh:#f9faf8;
+  --ht:#e5e7eb;
+  --os2:#333;
+  --g1:#446d4c;
+  --gr:#646464;
+}
+
+
+
+/**************** 
+             GENERAL STYLE FOR WEBSITE
+****************/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/****************
+             STYLES FOR CONTENT BODY DOCUMENT
+****************/
+body{
+    font-family: ' Open sans ', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    transition: opacity 0.24s ease-in-out 0s;
+    overflow-x: hidden;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000000;
+  font-weight: 500;
+  font-family: 'Shadows Into Light', cursive,Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
+  line-height: 1.35;
+  margin: 0 0 5px;
+  text-align: center;
+}
+
+.title{
+    text-align: center;
+}
+
+.title_food{
+    font-size: 35px;
+}
+
+.text_center{
+    text-align: center;
+}
+
+.text_justify{
+    text-align: justify;
+}
+
+.image{
+    width: 90%;
+    height: 100%;
+    background: var(--os1);
+    border-radius: 20px;
+    border: 5px solid var(--blu);
+    margin: auto;
+}
+
+.image img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.information{
+    width: 90%;
+    margin: auto;    
+}
+
+.mt-50{
+    margin-top: 50px;
+}
+
+.mt-100{
+    margin-top: 100px;
+}
+
+.ingredients,.preparations{
+    font-size: 35px;
+}
+
+                
+ol,ul {
+    list-style-type: none;
+    counter-reset: lista-personalizada;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+    
+ol li,ul li {
+      position: relative;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      padding: 4px 0 10px 30px;
+      margin: auto;
+      margin-bottom: 10px;
+      width: 70%;
+      text-align: justify;
+}
+      
+
+ol li:before, ul li:before {
+      content: counter(lista-personalizada);
+      counter-increment: lista-personalizada;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 8px 8px 8px 5px;
+      background:none;
+      color:#646464;
+      height: 45px;
+}
+
+ul li {
+        width: 100%;
+}
+
+
+
+/******************
+            FOOTER STYLES
+ *(****************/     
+
+ footer{
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #646464;
+    font-size: 13px;
+    background-color:var(--blu);
+    color: var(--bla);
+  }
+  
+  footer a{
+    color: var(--bla);
+    text-decoration: none;
+  }
+  
+  footer a i{
+    font-size: 15px;
+  }
+  
+  footer a i:hover{
+    transform: scale(1.1);
+  }
+
+
+@media(min-width:1100px){
+    ul li {
+       left: 43%;
+    }
+}
+
+@media(max-width:1100px){
+    ul li {
+       left: 40%;
+    }
+}
+
+@media(max-width:750px){
+    ul li {
+        left: 38%;
+     }
+}
+
+@media(max-width:650px){
+    ul li {
+        left: 25%;
+     }
+}
+  
+@media(max-width:450px){
+    ul li {
+        left: 20%;
+     }
+}
+
+
+/**************** 
+             KEYFRAMES TO ANIMATE SUBMENUS
+****************/
+@keyframes left-move {
+    0% {
+      opacity: 0;
+      transform: translateX(-300px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(10px);
+    }
+  }
+  
+  @keyframes left-move-1 {
+    0% {
+      opacity: 0;
+      transform: translateX(-250px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(10px);
+    }
+  }
+
+  @keyframes left-back {
+    0% {
+      opacity: 0;
+      transform: translateX(0px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-300px);
+    }
+  }
+
+
+  @keyframes right-move {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  
+  @keyframes up-move {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes down-move {
+    0% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(100px);
+    }
+  }
+
+
+/***************
+            START HEADER AND MENU SECTIONS TYLES 
+***************/
+header{
+    position: fixed;
+    top:0; left: 0; right:0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:var(--bla);
+    padding:0.8rem 9%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  }
+  
+  header .logo{
+    font-size: 18px;
+    font-weight: bolder;
+    color:var(--os0);
+    font-family: 'Shadows Into Light', cursive,Arial, Helvetica, sans-serif; 
+    text-decoration: none;
+  }
+  
+  header .logo i{
+    padding-right: .5rem;
+    color:var(--blue);
+  }
+  
+  header .navbar a{
+    font-size: 18px;
+    margin-left: 2rem;
+    color:var(--os0);
+    padding: 0.5rem 1rem;
+    font-family: 'Shadows Into Light', cursive,Arial, Helvetica, sans-serif;
+    text-decoration: none;
+  }
+  
+  header .navbar a:hover,header .navbar a.active{
+    background: var(--blu);
+    color:var(--bla);
+  }
+  
+  
+  #menu-bar{
+    font-size: 1.5rem;
+    cursor: pointer;
+    color:var(--os0);
+    border:.1rem solid var(--blu);
+    border-radius: .3rem;
+    padding:.3rem 1.0rem;
+    display: none;
+  }
+/***************
+            END HEADER AND MENU SECTIONS TYLES 
+***************/
+
+@media(max-width:1100px){
+
+    #menu-bar{
+      display: initial;
+    }
+  
+    header .navbar{
+      position: absolute;
+      top:100%; left: 10px; right:0;
+      background: #f7f7f7;
+      border-top: .1rem solid rgba(0,0,0,.1);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+  
+    header .navbar.active{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  
+    header .navbar a{
+      margin: 0.5rem;
+      padding:0.5rem;
+      display: block;
+      border:.2rem solid rgba(0,0,0,.1);
+      border-left:.5rem solid var(--blue);
+      background:var(--c1);
+      color: var(--n1);
+    }
+  
+    header .navbar a:hover{
+       background:var(--blu);
+       color: var(--bla);
+    }
+  
+  }
+  
